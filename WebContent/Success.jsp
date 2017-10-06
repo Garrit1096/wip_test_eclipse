@@ -5,12 +5,16 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>My Amazon</title>
+		<title>Login</title>
 	</head>
 	
 	<body>
-		<h1>My JSP</h1>
-		Test
+		<center>
+			<h1>Login Successful!!!</h1>
+			
+			Username is: ${userId} <br>
+			Password is: ${password}
+		</center>
 	</body>
 	
 </html>

@@ -1,4 +1,4 @@
-package TestServlet;
+package Servlets;
 
 import java.io.IOException;
 
@@ -10,27 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/start")
-public class TestServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public TestServlet() {
+    public LoginServlet() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-//		ServletContext sc = this.getServletContext();
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/NewFile.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
 		rd.forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);
+		
+		String userId, password;
+		
+		userId = request.getParameter("userId");
+		password = request.getParameter("password");
+		
+		System.out.println(userId);
+		System.out.println(password);
 	}	
 
 }
